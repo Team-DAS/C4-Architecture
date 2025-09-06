@@ -29,17 +29,19 @@ jobs:
 
       - run: npm ci
       - run: npm run build
+
       - name: Show files after build
         run: |
           echo "Root contents:"
           ls -la
           echo "Dist contents:"
           ls -la dist || echo "❌ dist not found"
-      
-            - name: Upload dist
-              uses: actions/upload-pages-artifact@v3
-              with:
-                path: dist
+
+      - name: Upload dist
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
 
   deploy:
     environment:
