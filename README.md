@@ -1,69 +1,51 @@
-# React + TypeScript + Vite
+# 🧭 UdeAJobs Platform — Technical Documentation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este repositorio contiene la **documentación técnica y arquitectónica** de _Freelancers Platform_, un sistema basado en **arquitectura de células** diseñado para conectar candidatos y empleadores de manera moderna, modular y escalable.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Documentación en línea
 
-## Expanding the ESLint configuration
+La documentación completa está disponible en GitHub Pages:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+👉 **[Ver documentación en línea](https://team-das.github.io/C4-Architecture/)**  
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+> Accede a los diagramas C4, descripciones de células y estructura general del sistema desde una interfaz web interactiva.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📘 Acerca del proyecto
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Freelancers Platform está estructurado en **células independientes**, donde cada célula agrupa los servicios necesarios para operar un dominio específico del sistema (identidad, perfiles, proyectos, ciclo de vida, etc.).  
+Este modelo permite una arquitectura más **resiliente**, **autónoma** y **escalable**.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+La documentación contenida en este repositorio busca ofrecer una **visión clara del sistema**, sus **componentes**, **interacciones** y **decisiones de diseño**.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## 🧩 Contenido principal
+
+| Sección | Descripción |
+|----------|-------------|
+| 🗺️ **C4 Diagrams** | Diagramas de arquitectura (Contexto, Contenedores, Componentes y Código). |
+| ⚙️ **Arquitectura de Células** | Descripción del enfoque celular y su aplicación en el proyecto. |
+| 🔐 **Identity Cell** | Diagramas y estructura del dominio de autenticación y autorización. |
+| 💼 **Projects Cell** | Estructura y relaciones dentro del dominio de proyectos. |
+| 👤 **Profile Cell** | Modelado y servicios del dominio de gestión de perfiles. |
+| 🔄 **Life Cycle Cell** | Flujo y ciclo de vida de postulaciones, notificaciones y comunicación. |
+| 🧭 **Cell Router** | Componente de enrutamiento global entre las células. |
+
+---
+
+## 🖥️ Visualización
+
+Esta documentación cuenta con una **interfaz web interactiva** creada con **React + TypeScript + Vite**, que permite navegar fácilmente entre los diagramas y descripciones del sistema.
+
+Para ejecutarla localmente:
+
+```bash
+# Instalar dependencias
+npm install
+
+# Iniciar entorno de desarrollo
+npm run dev
+
