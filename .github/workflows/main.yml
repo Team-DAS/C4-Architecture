@@ -3,7 +3,6 @@ name: Deploy Vite app to GitHub Pages
 on:
   push:
     branches: ["main"]
-
   workflow_dispatch:
 
 permissions:
@@ -27,21 +26,23 @@ jobs:
           node-version: 20
           cache: npm
 
-      - run: npm ci
-      - run: npm run build
+      - name: Install dependencies
+        run: npm ci
 
-      - name: Show files after build
+      - name: Build project
+        run: npm run build
+
+      - name: Verify dist folder
         run: |
           echo "Root contents:"
           ls -la
           echo "Dist contents:"
           ls -la dist || echo "❌ dist not found"
 
-      - name: Upload dist
-        uses: actions/upload-pages-artifact@v3
+      - name: Upload build output
+        uses: actions/upload-pages-artifact@v4   # ✅ usa v4
         with:
-          path: dist
-
+          path: ./dist                          # asegúrate de que sea la carpeta correcta
 
   deploy:
     environment:
