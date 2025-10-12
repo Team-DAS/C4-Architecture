@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
   font-weight: 400;
 
   color-scheme: light;
-  color: rgba(17, 24, 39, 0.87);
+  color: rgba(15, 23, 42, 0.9);
   background-color: #ffffff;
 
   font-synthesis: none;
@@ -14,14 +14,23 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  
+  /* Custom variables for elegant design */
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --border-light: rgba(15, 23, 42, 0.08);
+  --shadow-soft: 0 4px 20px rgba(15, 23, 42, 0.08);
+  --shadow-medium: 0 8px 30px rgba(15, 23, 42, 0.12);
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 50%);
 }
 
 #root {
@@ -29,9 +38,9 @@ body {
   margin: 0;
 }
 
-/* Custom scrollbar */
+/* Enhanced scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -39,15 +48,62 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 4px;
+  background: linear-gradient(180deg, #cbd5e1, #94a3b8);
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: linear-gradient(180deg, #94a3b8, #64748b);
 }
 
 /* Smooth transitions */
+* {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Focus styles */
+iframe:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+  border-radius: 12px;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Enhanced card hover effects */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Utility classes */
+.text-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .card-hover:hover {
+    transform: none;
+  }
+  
+  :root {
+    --shadow-soft: 0 2px 12px rgba(15, 23, 42, 0.06);
+    --shadow-medium: 0 4px 20px rgba(15, 23, 42, 0.08);
+  }
+}
 * {
   transition: all 0.2s ease-in-out;
 }
