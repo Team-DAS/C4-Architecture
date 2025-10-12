@@ -11,5 +11,6 @@ export default defineConfig({
   base: '/C4-Architecture/',
   build: {
     outDir: 'dist',
+    assetsDir: 'assets',
   },
 })
