@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://team-das.github.io/C4-Architecture/",
+  "homepage": "https://team-das.github.io/Documentation/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
