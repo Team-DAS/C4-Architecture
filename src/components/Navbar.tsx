@@ -1,14 +1,4 @@
-import { useState } from 'react'
-
-const cells = [
-  { id: 'projects', label: 'Projects', color: 'bg-emerald-500' },
-  { id: 'profile', label: 'Profile', color: 'bg-blue-500' },
-  { id: 'identity', label: 'Identity', color: 'bg-purple-500' },
-  { id: 'infrastructure', label: 'Infrastructure', color: 'bg-orange-500' },
-]
-
 export default function Navbar() {
-  const [mobileOpen, setMobileOpen] = useState(false)
 
   return (
     <nav className="bg-white/80 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50 shadow-sm">
