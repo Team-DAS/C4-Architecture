@@ -3,6 +3,7 @@ type ServiceItem = {
   name: string
   port?: number
   docsUrl?: string
+  readmeUrl?: string
   status?: 'online' | 'offline' | 'unknown'
 }
 
@@ -79,9 +80,11 @@ export default function CellNavbar({ cellName, services }: CellNavbarProps) {
                   </a>
                 )}
                 <a
-                  href={`#${service.id}`}
+                  href={service.readmeUrl || `#${service.id}`}
+                  target={service.readmeUrl ? "_blank" : "_self"}
+                  rel={service.readmeUrl ? "noopener noreferrer" : undefined}
                   className="px-2 py-1 text-xs font-medium text-slate-600 bg-slate-100 border border-slate-200 rounded-md hover:bg-slate-200 transition-colors"
-                  title="View Service Details"
+                  title={service.readmeUrl ? "View README" : "View Service Details"}
                 >
                   View
                 </a>

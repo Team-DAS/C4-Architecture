@@ -5,21 +5,22 @@ import CellNavbar from './components/CellNavbar'
 // Sample data for microservices
 const cellsData = {
   projects: [
-    { id: 'projects-service', name: 'Projects Service', port: 8071, docsUrl: 'http://localhost:8071/swagger-ui.html', status: 'unknown' as const },
+    { id: 'projects-service', name: 'Projects Service', port: 8071, docsUrl: 'https://team-das.github.io/projects-cell/projects-service/', readmeUrl: 'https://github.com/Team-DAS/projects-cell/blob/main/projects-service/README.md', status: 'online' as const },
   ],
   profile: [
-    { id: 'profile-service', name: 'Profile Service', port: 8091, docsUrl: 'http://localhost:8091/swagger-ui.html', status: 'unknown' as const },
-    { id: 'file-service', name: 'File Service', port: 8092, docsUrl: 'http://localhost:8092/swagger-ui.html', status: 'unknown' as const },
+    { id: 'profile-service', name: 'Profile Service', port: 8091, docsUrl: 'https://team-das.github.io/profile-cell/profile-service', readmeUrl: 'https://github.com/Team-DAS/profile-cell/blob/main/profile-service/README.md', status: 'online' as const },
+    { id: 'file-service', name: 'File Service', port: 8092, docsUrl: 'https://team-das.github.io/profile-cell/file-service', readmeUrl: 'https://github.com/Team-DAS/profile-cell/blob/main/file-service/README.md', status: 'online' as const },
+    { id: 'profile-gateway', name: 'Profile Gateway', port: 8090, docsUrl: 'https://team-das.github.io/profile-cell/profile-gateway', readmeUrl: 'https://github.com/Team-DAS/profile-cell/blob/main/profile-gateway/README.md', status: 'online' as const },
   ],
   identity: [
-    { id: 'auth-service', name: 'Auth Service', port: 8081, docsUrl: 'http://localhost:8081/swagger-ui.html', status: 'unknown' as const },
-    { id: 'account-service', name: 'Account Service', port: 8082, docsUrl: 'http://localhost:8082/swagger-ui.html', status: 'unknown' as const },
-    { id: 'authz-service', name: 'Authorization Service', port: 8083, docsUrl: 'http://localhost:8083/swagger-ui.html', status: 'unknown' as const },
-    { id: 'identity-gateway', name: 'Identity Gateway', port: 8080, docsUrl: 'http://localhost:8080/swagger-ui.html', status: 'unknown' as const },
+    { id: 'auth-service', name: 'Auth Service', port: 8081, docsUrl: 'https://team-das.github.io/identity-cell/auth-service', readmeUrl: 'https://github.com/Team-DAS/identity-cell/blob/main/auth-service/README.md', status: 'online' as const },
+    { id: 'account-service', name: 'Account Service', port: 8082, docsUrl: 'https://team-das.github.io/identity-cell/account-service', readmeUrl: 'https://github.com/Team-DAS/identity-cell/tree/main/account-service/README.md', status: 'online' as const },
+    { id: 'authz-service', name: 'Authorization Service', port: 8083, docsUrl: 'https://team-das.github.io/identity-cell/authz-service', readmeUrl: 'https://github.com/Team-DAS/identity-cell/blob/main/authz-service/README.md', status: 'online' as const },
+    { id: 'identity-gateway', name: 'Identity Gateway', port: 8080, docsUrl: 'https://team-das.github.io/identity-cell/identity-gateway', readmeUrl: 'https://github.com/Team-DAS/identity-cell/blob/main/identity-gateway/README.md', status: 'online' as const },
   ],
   infrastructure: [
-    { id: 'message-broker', name: 'Message Broker', port: 5672, status: 'unknown' as const },
-    { id: 'observability', name: 'Observability Stack', port: 3000, status: 'unknown' as const },
+    { id: 'message-broker', name: 'Message Broker', port: 5672, readmeUrl: 'https://github.com/Team-DAS/infrastructure-cell/blob/main/message-broker/README.md', status: 'unknown' as const },
+    { id: 'observability', name: 'Observability Stack', port: 3000, readmeUrl: 'https://github.com/Team-DAS/infrastructure-cell/blob/main/observability/README.md', status: 'unknown' as const },
   ],
 }
 
